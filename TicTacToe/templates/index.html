@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1 class="title">Tic Tac Toe</h1>
+        <div class="game">
+            <div class="row">
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+                <div class="cell win-cell"></div>
+            </div>
+            <svg class="win-line" width="300" height="500">
+                <line id="win-line" x1="0" y1="0" x2="0" y2="0" style="stroke:rgb(255,0,0);stroke-width:5" />
+            </svg>
+        </div>
+    <script src="{% static 'scripts.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

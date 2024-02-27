@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url(board.jpg);
+}
+
+.container {
+    text-align: center;
+}
+
+.title{
+    color: white;
+    font-family: montserrat;
+}
+
+.game {
+    position: relative;
+    border: 2px solid #000;
+    background: url(paper.jpg);
+    overflow: hidden; /* Добавим overflow: hidden, чтобы линия не выходила за пределы блока .game */
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #eee;
+}
+
+.game-container {
+    position: relative;
+}
+
+.win-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Чтобы линия не мешала нажатиям на ячейки */
+    z-index: 1; /* Чтобы линия отображалась над ячейками */
+  }
+
+
+@keyframes drawLine {
+    from {
+      stroke-dashoffset: 100%;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .win-line line {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    animation: drawLine 1s ease forwards;
+  }
